@@ -4,12 +4,12 @@ spring:
   main:
     allow-bean-definition-overriding: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/user_db
+    url: jdbc:postgresql://localhost:5433/user_db
     username: postgres
     password: password
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     show-sql: true
     open-in-view: false
     properties:
@@ -66,4 +66,4 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.springframework.jdbc: INFO
   pattern:
-    console: '%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%-5level) %clr([%thread]){faint} %clr([%X{traceId}]){faint} %clr(%logger{36}){cyan}:%clr(%L){faint} - %msg%n%wEx'
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%-5level) %clr([%thread]){faint} %clr([%X{traceId}]){faint} %clr(%logger{36}){cyan}:%clr(%L){faint} - %msg%n%wEx"

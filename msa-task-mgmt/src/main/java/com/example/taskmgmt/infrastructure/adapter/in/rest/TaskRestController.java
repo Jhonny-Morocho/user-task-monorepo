@@ -18,6 +18,9 @@ public class TaskRestController implements TaskManagementApi {
 
     @Override
     public ResponseEntity<GetTasksListResponse> getAllTasks(String title, Integer page, Integer size) {
+        System.out.println("title: " + title);
+        System.out.println("page: " + page);
+        System.out.println("size: " + size);
         var response = taskServicePort.findAll(title, page, size);
         return ResponseEntity.ok(response);
     }
@@ -33,6 +36,7 @@ public class TaskRestController implements TaskManagementApi {
 
     @Override
     public ResponseEntity<GetTaskResponse> createTask(PostTaskRequest taskDto) {
+        System.out.println("taskDto: " + taskDto);
         var task = taskMapper.toDomain(taskDto);
         var savedTask = taskServicePort.save(task);
 

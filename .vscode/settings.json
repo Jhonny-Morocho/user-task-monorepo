@@ -1,0 +1,10 @@
+{
+    "java.jdt.ls.java.home": "C:\\Users\\Usuario iTC\\scoop\\apps\\openjdk25\\current",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-25",
+            "path": "C:\\Users\\Usuario iTC\\scoop\\apps\\openjdk25\\current",
+            "default": true
+        }
+    ]
+}

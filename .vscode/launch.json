@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "msa-user-mgmt",
+            "request": "launch",
+            "mainClass": "com.example.usermgmt.UserMgmtApplication",
+            "projectName": "msa-user-mgmt",
+            "cwd": "${workspaceFolder}/msa-user-mgmt",
+            "encoding": "UTF-8"
+        },
+        {
+            "type": "java",
+            "name": "msa-task-mgmt",
+            "request": "launch",
+            "mainClass": "com.example.taskmgmt.TaskMgmtApplication",
+            "projectName": "msa-task-mgmt",
+            "cwd": "${workspaceFolder}/msa-task-mgmt",
+            "encoding": "UTF-8"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch All Services",
+            "configurations": [
+                "msa-user-mgmt",
+                "msa-task-mgmt"
+            ]
+        }
+    ]
+}

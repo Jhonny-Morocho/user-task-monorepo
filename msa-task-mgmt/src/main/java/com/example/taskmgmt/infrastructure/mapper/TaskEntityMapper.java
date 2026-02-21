@@ -16,6 +16,7 @@ public interface TaskEntityMapper {
 
     @Mapping(target = "createdAt", expression = "java(toOffsetDateTime(entity.getCreatedAt()))")
     @Mapping(target = "updatedAt", expression = "java(toOffsetDateTime(entity.getUpdatedAt()))")
+    @Mapping(target = "userId", source = "assignedUserId")
     Task toDomain(TaskEntity entity);
 
     @Mapping(target = "createdAt", ignore = true)
@@ -24,10 +25,10 @@ public interface TaskEntityMapper {
     @Mapping(target = "createdBy", ignore = true)
     @Mapping(target = "updatedBy", ignore = true)
     @Mapping(target = "deletedBy", ignore = true)
+    @Mapping(target = "assignedUserId", source = "userId")
     TaskEntity toEntity(Task task);
 
     default OffsetDateTime toOffsetDateTime(LocalDateTime localDateTime) {
         return localDateTime != null ? localDateTime.atOffset(ZoneOffset.UTC) : null;
     }
 }
-
